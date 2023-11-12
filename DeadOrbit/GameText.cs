@@ -10,8 +10,15 @@ public class GameText
 		Console.ResetColor();
 	}
 
+    public void HostileNPC(string name)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(name);
+        Console.ResetColor();
+    }
 
-	public void GameIntro()
+
+    public void GameIntro()
 	{
         Console.ForegroundColor = ConsoleColor.Red;
 		Console.WriteLine("----------------\r\n|  Dead Orbit  |\r\n----------------\r\n");
@@ -28,8 +35,6 @@ public class GameText
 		FriendlyNPC("\nSincere Arrington:");
 		Console.WriteLine("This is Sincere Arrington, Head of Security here at Europa. Please identify yourself and " +
 			"forward your credentialsS."); 
-
-		
 	}
 
 
