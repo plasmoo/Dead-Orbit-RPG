@@ -17,6 +17,13 @@ public class GameText
         Console.ResetColor();
     }
 
+	public void InstructionText(string message)
+	{
+		Console.ForegroundColor = ConsoleColor.Yellow;
+		Console.WriteLine(message);
+		Console.ResetColor();
+	}
+
 
     public void GameIntro()
 	{
@@ -35,6 +42,11 @@ public class GameText
 		FriendlyNPC("\nSincere Arrington:");
 		Console.WriteLine("This is Sincere Arrington, Head of Security here at Europa. Please identify yourself and " +
 			"forward your credentialsS."); 
+	}
+
+	public void PilotCredentials()
+	{
+		
 	}
 
 

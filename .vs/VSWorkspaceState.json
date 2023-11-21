@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DeadOrbit"
   ],
-  "SelectedNode": "\\C:\\Users\\andre\\Source\\Repos\\Dead-Orbit-RPG",
+  "SelectedNode": "\\DeadOrbit\\Character.cs",
   "PreviewInSolutionExplorer": false
 }

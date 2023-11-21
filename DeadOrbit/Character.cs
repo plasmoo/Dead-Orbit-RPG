@@ -17,7 +17,7 @@
     Random random = new Random();
 
     //Dice Roller
-    public void DiceRoller(string abilityType, int passingScore)
+    public int DiceRoller(string abilityType, int passingScore)
     {
         int AbilityScore = 0;
 
@@ -42,7 +42,7 @@
                 Console.ForegroundColor = ConsoleColor.Red; 
                 Console.WriteLine("WARNING: Invalid ability type input (Remember ability type is case sensitive");
                 Console.ResetColor();
-                return;
+                return -1; 
         }
 
         int DiceRoll = random.Next(1, 21);
@@ -61,6 +61,8 @@
             Console.WriteLine($"Your {abilityType} failed!");
             Console.ResetColor();
         }
+
+        return RollPlusModifier;
     }
 
 
