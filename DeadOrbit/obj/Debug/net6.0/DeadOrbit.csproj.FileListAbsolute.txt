@@ -1,0 +1,14 @@
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\bin\Debug\net6.0\DeadOrbit.exe
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\bin\Debug\net6.0\DeadOrbit.deps.json
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\bin\Debug\net6.0\DeadOrbit.runtimeconfig.json
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\bin\Debug\net6.0\DeadOrbit.dll
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\bin\Debug\net6.0\DeadOrbit.pdb
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.AssemblyInfoInputs.cache
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.AssemblyInfo.cs
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.csproj.CoreCompileInputs.cache
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.dll
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\refint\DeadOrbit.dll
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.pdb
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\DeadOrbit.genruntimeconfig.cache
+C:\Users\andre\Source\Repos\Dead-Orbit-RPG\DeadOrbit\obj\Debug\net6.0\ref\DeadOrbit.dll
