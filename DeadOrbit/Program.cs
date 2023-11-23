@@ -18,8 +18,25 @@ namespace DeadOrbit
             string playerName = Console.ReadLine();
 
             //Getting player age 
-            gameText.YellowText("What is your age?");
-            int playerAge = int.Parse(Console.ReadLine());
+            int playerAge;
+            bool isValidInput;
+
+            do
+            {
+                gameText.YellowText("What is your age?");
+                string input = Console.ReadLine();
+
+                isValidInput = int.TryParse(input, out playerAge);
+
+                if (!isValidInput)
+                {
+                    gameText.RedText("Invalid selection!");
+                }
+
+
+            } while (!isValidInput);
+            
+            
             bool isOld = false; 
 
             if (playerAge >= 50)
