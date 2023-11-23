@@ -106,24 +106,53 @@
     }
 
 
+    //Inventory 
 
-        //Constructor
-        public Character(string name, int age,bool isOld, bool isMale, string background,bool isVeteran,bool 
-            isSalesman,bool isLifter, int strength, int agility, int perception,
-            int intelligence, int charisma)
+    List<string> Inventory = new List<string>();
+
+    public void CheckInventory()
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        if (Inventory.Count == 0)
         {
-            Name = name;
-            Age = age;
-            IsOld = isOld;
-            IsMale = isMale;
-            Background = background;
-            IsVeteran = isVeteran;
-            IsSalesman = isSalesman;
-            IsLifter = isLifter;
-            Strength = strength;
-            Agility = agility;
-            Perception = perception;
-            Intelligence = intelligence;
-            Charisma = charisma;
+            Console.WriteLine("\nInventory is empty.");
+            return;
         }
+
+        Console.WriteLine("\nInventory items:");
+        foreach (string item in Inventory)
+        {
+            Console.WriteLine(item);
+        }
+        Console.ResetColor();
     }
+
+
+
+    //Constructor
+    public Character(string name, int age, bool isOld, bool isMale, string background, bool isVeteran, bool
+        isSalesman, bool isLifter, int strength, int agility, int perception,
+        int intelligence, int charisma)
+    {
+        Name = name;
+        Age = age;
+        IsOld = isOld;
+        IsMale = isMale;
+        Background = background;
+        IsVeteran = isVeteran;
+        IsSalesman = isSalesman;
+        IsLifter = isLifter;
+        Strength = strength;
+        Agility = agility;
+        Perception = perception;
+        Intelligence = intelligence;
+        Charisma = charisma;
+
+        //Inventory 
+        Inventory.Add("Pistol");
+    }
+
+
+
+
+}

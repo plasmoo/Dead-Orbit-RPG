@@ -154,6 +154,7 @@ namespace DeadOrbit
             Character Player = new Character(playerName, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
                 isLifter, STR, AGL, PER, INTEL, CHAR);
             Player.CharacterInfo();
+            Player.CheckInventory();
 
             Console.ReadLine();
         }
