@@ -14,11 +14,11 @@ namespace DeadOrbit
             gameText.GameIntro();
 
             //Getting player name
-            gameText.InstructionText("What is your name?");
+            gameText.YellowText("What is your name?");
             string playerName = Console.ReadLine();
 
             //Getting player age 
-            gameText.InstructionText("What is your age?");
+            gameText.YellowText("What is your age?");
             int playerAge = int.Parse(Console.ReadLine());
             bool isOld = false; 
 
@@ -33,7 +33,7 @@ namespace DeadOrbit
 
            do
             {
-                gameText.InstructionText("Are you male or female? Please enter 'M' or 'F'");
+                gameText.YellowText("Are you male or female? Please enter 'M' or 'F'");
                 genderInput = Console.ReadLine().ToUpper();
 
                 if (genderInput != "F" && genderInput != "M" )
@@ -56,7 +56,7 @@ namespace DeadOrbit
 
             do
             {
-                gameText.InstructionText("What is your background? \n [Veteran]: You are a former Space Marine, having " +
+                gameText.YellowText("What is your background? \n [Veteran]: You are a former Space Marine, having " +
                 "served multiple years in the armed forces you are a force to be reckoned with in combat. " +
                 " +2 to Attack Rolls \n [Salesman]: You used to sell manufacturing equipment to colonists many years" +
                 " ago and were quite good at it. You've got a silver tongue. +2 to Charisma Rolls" +
@@ -90,7 +90,7 @@ namespace DeadOrbit
 
 
 
-            gameText.InstructionText("Dead Orbit is a dice based roleplaying game, meaning that whether or not you " +
+            gameText.YellowText("Dead Orbit is a dice based roleplaying game, meaning that whether or not you " +
                 "succeed in an action is determined by the roll of a D20 (a twenty sided die), adding on " +
                 "your ability modifiers. There are 5 Ability Modifiers: Strength, Agility, Perception " +
                 "Intelligence, and Charisma. \n [Strength]: This is a measure of your ability to generate force. " +
