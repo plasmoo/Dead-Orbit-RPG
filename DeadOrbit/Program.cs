@@ -95,7 +95,7 @@ namespace DeadOrbit
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("INVALID SELECTION.");
+                        Console.WriteLine("Invalid Selection!");
                         Console.ResetColor();
                         break;
                 }
@@ -103,23 +103,57 @@ namespace DeadOrbit
             } while (backgroundInput != "V" && backgroundInput != "S" && backgroundInput != "W");
 
 
+            // Explaining Ability Checks and distributing points
+            int STR, AGL, PER, INTEL, CHAR;
+            bool isInputValid;
+            int totalPoints;
+
+            do
+            {
+                totalPoints = 0;
+                gameText.AbilityCheckInfo();
+
+                gameText.YellowText("\n\nSelect your Strength score:");
+                isInputValid = int.TryParse(Console.ReadLine(), out STR);
+                totalPoints += isInputValid ? STR : 0;
+
+                gameText.YellowText("\nSelect your Agility score:");
+                isInputValid = int.TryParse(Console.ReadLine(), out AGL);
+                totalPoints += isInputValid ? AGL : 0;
+
+                gameText.YellowText("\nSelect your Perception score:");
+                isInputValid = int.TryParse(Console.ReadLine(), out PER);
+                totalPoints += isInputValid ? PER : 0;
+
+                gameText.YellowText("\nSelect your Intelligence score:");
+                isInputValid = int.TryParse(Console.ReadLine(), out INTEL);
+                totalPoints += isInputValid ? INTEL : 0;
+
+                gameText.YellowText("\nSelect your Charisma score:");
+                isInputValid = int.TryParse(Console.ReadLine(), out CHAR);
+                totalPoints += isInputValid ? CHAR : 0;
+
+                if (!isInputValid)
+                {
+                    gameText.RedText("Invalid input! Please enter numeric values.");
+                    STR = AGL = PER = INTEL = CHAR = 0;
+                }
+                else if (totalPoints > 5)
+                {
+                    gameText.RedText("Nice try, cheater! You only get 5 points to distribute, or less if you want" +
+                        " to make the game harder on yourself. BUT NO MORE THAN 5! Try AGAIN! \n ");
+                    STR = AGL = PER = INTEL = CHAR = 0;
+                }
+
+            } while (totalPoints > 5 || !isInputValid);
+
+            Console.WriteLine(STR);
+            Console.WriteLine(AGL);
+            Console.WriteLine(PER);
+            Console.WriteLine(INTEL);
+            Console.WriteLine(CHAR);
 
 
-
-
-            gameText.YellowText("Dead Orbit is a dice based roleplaying game, meaning that whether or not you " +
-                "succeed in an action is determined by the roll of a D20 (a twenty sided die), adding on " +
-                "your ability modifiers. There are 5 Ability Modifiers: Strength, Agility, Perception " +
-                "Intelligence, and Charisma. \n [Strength]: This is a measure of your ability to generate force. " +
-                "Example: Breaking down doors, lifting heavy objects, etc. \n [Agility]: this is a measure of " +
-                "your ability to move quickly / react to stimuli. Example: Outrunning an enemy, catching a falling " +
-                "item. \n [Perception]: This is a measure of your ability to observe the world around you. Example: " +
-                "Noticing a hidden door. \n [Intelligence]: This is a measure of your knowledge. Example: Knowing " +
-                "how to operate technical machinery. \n [Charisma]: This is a measure of your force of personality. " +
-                "It determines how well you can influence others. Example: Persuading a merchant for a discount. \n " +
-                "You have 5 Ability Points to disperse across these categories, each point is added onto your roll." +
-                " Choose wisely.");
-           
 
 
             // Assuming Character is a class you have defined elsewhere

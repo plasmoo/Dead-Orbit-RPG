@@ -41,10 +41,22 @@ public class GameText
 			"forward your credentialsS."); 
 	}
 
-	public void PilotCredentials()
+	public void AbilityCheckInfo()
 	{
+        YellowText("Dead Orbit is a dice based roleplaying game, meaning that whether or not you " +
+                "succeed in an action is determined by the roll of a D20 (a twenty sided die), adding on " +
+                "your ability modifiers. There are 5 Ability Modifiers: Strength, Agility, Perception " +
+                "Intelligence, and Charisma. \n [Strength]: This is a measure of your ability to generate force. " +
+                "Example: Breaking down doors, lifting heavy objects, etc. \n [Agility]: this is a measure of " +
+                "your ability to move quickly / react to stimuli. Example: Outrunning an enemy, catching a falling " +
+                "item. \n [Perception]: This is a measure of your ability to observe the world around you. Example: " +
+                "Noticing a hidden door. \n [Intelligence]: This is a measure of your knowledge. Example: Knowing " +
+                "how to operate technical machinery. \n [Charisma]: This is a measure of your force of personality. " +
+                "It determines how well you can influence others. Example: Persuading a merchant for a discount. \n " +
+                "You have 5 Ability Points to disperse across these categories, each point is added onto your roll." +
+                " Choose wisely.");
 		
-	}
+    }
 
 
 
