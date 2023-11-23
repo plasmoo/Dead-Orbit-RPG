@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DeadOrbit/obj/Release/net6.0/DeadOrbit.AssemblyInfo.cs
+/DeadOrbit/obj/Release/net6.0/DeadOrbit.GlobalUsings.g.cs
+/DeadOrbit/obj/Release/net6.0/DeadOrbit.assets.cache
+/DeadOrbit/obj/Release/net6.0/DeadOrbit.GeneratedMSBuildEditorConfig.editorconfig
+/.vs/Dead-Orbit-RPG/config/applicationhost.config
+/.vs/Dead-Orbit-RPG/FileContentIndex/277f8d51-d9ab-45f0-b1ef-93b8728853ca.vsidx
+/.vs/Dead-Orbit-RPG/FileContentIndex/332376eb-313e-4862-ba24-d0cf53cb9256.vsidx
+/.vs/Dead-Orbit-RPG/FileContentIndex
+/.vs/slnx.sqlite
+/.vs/tasks.vs.json
+/DeadOrbit/obj/Debug/net6.0/DeadOrbit.assets.cache
+/DeadOrbit/obj/Debug/net6.0/DeadOrbit.GeneratedMSBuildEditorConfig.editorconfig
+/DeadOrbit/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+/DeadOrbit/obj/Release/net6.0/DeadOrbit.AssemblyInfoInputs.cache
