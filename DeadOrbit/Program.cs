@@ -7,15 +7,17 @@ namespace DeadOrbit
     {
         static void Main(string[] args)
         {
+            // Instantiate GameText Class
             GameText gameText = new GameText();
-
+           
+            //Set up intro to game
             gameText.GameIntro();
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
+            //Getting player name
             gameText.InstructionText("What is your name?");
             string playerName = Console.ReadLine();
 
+            //Getting player age 
             gameText.InstructionText("What is your age?");
             int playerAge = int.Parse(Console.ReadLine());
             bool isOld = false; 
@@ -25,13 +27,27 @@ namespace DeadOrbit
                 isOld = true;
             }
 
-            gameText.InstructionText("Are you male or female? Please enter 'M' or 'F'");
-            string genderInput = Console.ReadLine();
-            bool isMale = true;
-            if (genderInput == "F")
+            //Getting player gender and loops if they select incorrect option
+            string genderInput;
+            bool isMale = false;
+
+           do
             {
-                isMale = false;
+                gameText.InstructionText("Are you male or female? Please enter 'M' or 'F'");
+                genderInput = Console.ReadLine().ToUpper();
+
+                if (genderInput != "F" && genderInput != "M" )
+                {
+                    gameText.RedText("Invalid Selection!");
+                }
+
+            } while (genderInput != "F" && genderInput != "M");
+
+            if (genderInput == "M") {
+                isMale = true;
+            
             }
+
 
             gameText.InstructionText("What is your background? \n [Veteran]: You are a former Space Marine, having " +
                 "served multiple years in the armed forces you are a force to be reckoned with in combat. " +

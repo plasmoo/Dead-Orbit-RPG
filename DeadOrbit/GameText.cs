@@ -3,14 +3,14 @@
 public class GameText
 {
 
-	public void FriendlyNPC(string name)
+	public void GreenText(string name)
 	{
 		Console.ForegroundColor = ConsoleColor.Green;
 		Console.WriteLine(name);
 		Console.ResetColor();
 	}
 
-    public void HostileNPC(string name)
+    public void RedText(string name)
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine(name);
@@ -39,7 +39,7 @@ public class GameText
 			"transport food and medical supplies to the colony and are in the process of entering the planet's orbit.  ");
 		Console.ResetColor();
 
-		FriendlyNPC("\nSincere Arrington:");
+		GreenText("\nSincere Arrington:");
 		Console.WriteLine("This is Sincere Arrington, Head of Security here at Europa. Please identify yourself and " +
 			"forward your credentialsS."); 
 	}
