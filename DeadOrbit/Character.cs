@@ -3,8 +3,12 @@
     // Character Info 
     public string Name { get; set; }
     public int Age { get; set; }
+    public bool IsOld { get; set; }
     public bool IsMale { get; set; }
     public string Background { get; set; }
+    public bool IsVeteran { get; set; } 
+    public bool IsSalesman { get; set; }    
+    public bool IsLifter { get; set; }
 
     //Character Stats
     public int Strength { get; set; }
@@ -65,16 +69,57 @@
         return RollPlusModifier;
     }
 
+    // Character Information 
+
+    public void CharacterInfo()
+    {
+        string Gender = "";
+        string Background;
+
+        if (this.IsMale = true )
+        {
+            Gender = "Male";
+        } else
+        {
+            Gender = "Female";
+        }
+
+        if (this.IsVeteran == true)
+        {
+            Background = "Veteran";
+        } else if (this.IsSalesman = true )
+        {
+            Background = "Salesman";
+        } else if (this.IsLifter = true)
+        {
+            Background = "Weightlifter";
+        } else
+        {
+            Background = "";
+        }
+
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"\nName: {this.Name}\nAge: {this.Age}\nGender: {Gender}\nBackground: {Background} " +
+            $"\nStrength: {this.Strength}\nAgility: {this.Agility}\nPerception: {this.Perception}\nIntelligence: " +
+            $"{this.Intelligence}\nCharisma: {this.Charisma} ");
+        Console.ResetColor(); 
+    }
+
 
 
         //Constructor
-        public Character(string name, int age, bool isMale, string background, int strength, int agility, int perception,
+        public Character(string name, int age,bool isOld, bool isMale, string background,bool isVeteran,bool 
+            isSalesman,bool isLifter, int strength, int agility, int perception,
             int intelligence, int charisma)
         {
             Name = name;
             Age = age;
+            IsOld = isOld;
             IsMale = isMale;
             Background = background;
+            IsVeteran = isVeteran;
+            IsSalesman = isSalesman;
+            IsLifter = isLifter;
             Strength = strength;
             Agility = agility;
             Perception = perception;

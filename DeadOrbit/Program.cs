@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.PortableExecutable;
 // Include any other necessary namespaces
 
 namespace DeadOrbit
@@ -147,18 +148,12 @@ namespace DeadOrbit
 
             } while (totalPoints > 5 || !isInputValid);
 
-            Console.WriteLine(STR);
-            Console.WriteLine(AGL);
-            Console.WriteLine(PER);
-            Console.WriteLine(INTEL);
-            Console.WriteLine(CHAR);
 
 
-
-
-            // Assuming Character is a class you have defined elsewhere
-            Character Player = new Character(playerName, playerAge, true, "Veteran", 2, 2, 2, 2, 2);
-            Player.DiceRoller("Strength", 10);
+            // Instantiate the Player 
+            Character Player = new Character(playerName, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
+                isLifter, STR, AGL, PER, INTEL, CHAR);
+            Player.CharacterInfo();
 
             Console.ReadLine();
         }
