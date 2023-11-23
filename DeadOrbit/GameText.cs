@@ -35,6 +35,7 @@ public class GameText
 			"blackholes to space marauders. You are currently en-route to the Outer-Rim colony of Europa. Despite " +
 			"your initial bad feelings about this job it has proven to be a quiet trip. You've been hired to " +
 			"transport food and medical supplies to the colony and are in the process of entering the planet's orbit.  ");
+		Console.ResetColor();
 
 		GreenText("\nSincere Arrington:");
 		Console.WriteLine("This is Sincere Arrington, Head of Security here at Europa. Please identify yourself and " +
@@ -56,7 +57,7 @@ public class GameText
                 "You have 5 Ability Points to disperse across these categories, each point is added onto your roll." +
                 " Choose wisely.");
 		
-    }
+	}
 
 
 
