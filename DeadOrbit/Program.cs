@@ -27,7 +27,7 @@ namespace DeadOrbit
                 isOld = true;
             }
 
-            //Getting player gender and loops if they select incorrect option
+            //Selecting player gender and verification
             string genderInput;
             bool isMale = false;
 
@@ -45,38 +45,50 @@ namespace DeadOrbit
 
             if (genderInput == "M") {
                 isMale = true;
-            
             }
 
+            //Selecting player background and verification
 
-            gameText.InstructionText("What is your background? \n [Veteran]: You are a former Space Marine, having " +
+            string backgroundInput; 
+            bool isVeteran = false;
+            bool isSalesman = false;
+            bool isLifter = false;
+
+            do
+            {
+                gameText.InstructionText("What is your background? \n [Veteran]: You are a former Space Marine, having " +
                 "served multiple years in the armed forces you are a force to be reckoned with in combat. " +
                 " +2 to Attack Rolls \n [Salesman]: You used to sell manufacturing equipment to colonists many years" +
                 " ago and were quite good at it. You've got a silver tongue. +2 to Charisma Rolls" +
                 "\n [Weightlifter] Once upon a time you were a top tier competitive athlete. While " +
                 "your competition days might be long past you're still stronger than the averagae joe.  +2 to " +
                 "Strength Rolls.\n \n Please enter 'V', 'S', or 'W'");
-            bool isVeteran = false;
-            bool isSalesman = false;
-            bool isLifter = false; 
-            string backgroundInput = Console.ReadLine(); 
-            switch (backgroundInput)
-            {
-                case "V":
-                    isVeteran = true;
-                    break;
-                case "S":
-                    isSalesman = true;
-                    break;
-                case "W":
-                    isLifter = true;
-                    break;
-                default:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("INVALID SELECTION.");
-                    Console.ResetColor();
-                    break;
-            }
+
+                backgroundInput = Console.ReadLine().ToUpper();
+                switch (backgroundInput)
+                {
+                    case "V":
+                        isVeteran = true;
+                        break;
+                    case "S":
+                        isSalesman = true;
+                        break;
+                    case "W":
+                        isLifter = true;
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("INVALID SELECTION.");
+                        Console.ResetColor();
+                        break;
+                }
+
+            } while (backgroundInput != "V" && backgroundInput != "S" && backgroundInput != "W");
+
+
+
+
+
 
             gameText.InstructionText("Dead Orbit is a dice based roleplaying game, meaning that whether or not you " +
                 "succeed in an action is determined by the roll of a D20 (a twenty sided die), adding on " +
