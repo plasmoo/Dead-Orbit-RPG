@@ -2,6 +2,7 @@
 {
     // Character Info 
     public string Name { get; set; }
+    public int Health {  get; set; }
     public int Age { get; set; }
     public bool IsOld { get; set; }
     public bool IsMale { get; set; }
@@ -127,14 +128,56 @@
         Console.ResetColor();
     }
 
+    //Checking current health method 
+
+    public void CheckHealth()
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"\nCurrent Health: {this.Health}");
+        Console.ResetColor();
+    }
+
+    public int ProcessPlayerInput(string input)
+    {
+        int number;
+        if (int.TryParse(input, out number) && number < 4)
+        {
+            return number;
+        }
+
+        // Handling other commands
+        switch (input.ToLower())
+        {
+            case "/inventory":
+                this.CheckInventory();
+                break;
+            case "/health":
+                this.CheckHealth();
+                break;
+            case "/info":
+                this.CharacterInfo();
+                break;
+            default:
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid selection!");
+                Console.ResetColor();
+                break;
+        }
+
+        // Return a default value for non-numeric and unhandled inputs
+        return -1;
+    }
+
+
 
 
     //Constructor
-    public Character(string name, int age, bool isOld, bool isMale, string background, bool isVeteran, bool
+    public Character(string name,int health, int age, bool isOld, bool isMale, string background, bool isVeteran, bool
         isSalesman, bool isLifter, int strength, int agility, int perception,
         int intelligence, int charisma)
     {
         Name = name;
+        Health = health;
         Age = age;
         IsOld = isOld;
         IsMale = isMale;

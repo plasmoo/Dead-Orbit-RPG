@@ -56,9 +56,13 @@ public class GameText
                 "It determines how well you can influence others. Example: Persuading a merchant for a discount. \n " +
                 "You have 5 Ability Points to disperse across these categories, each point is added onto your roll." +
                 " Choose wisely.");
-		
 	}
 
+	public void CommandsInfo()
+	{
+		YellowText("Throughout the course of the game you might want to check your inventory, or other information " +
+			"that you wish to know. This can be done with the following commands: \n /inventory\n /health\n /info");
+	}
 
 
 

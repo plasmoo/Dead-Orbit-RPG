@@ -8,38 +8,27 @@ namespace DeadOrbit
     {
         static void Main(string[] args)
         {
-            // Instantiate GameText Class
             GameText gameText = new GameText();
-           
-            //Set up intro to game
             gameText.GameIntro();
-
             //Getting player name
             gameText.YellowText("What is your name?");
             string playerName = Console.ReadLine();
-
             //Getting player age 
             int playerAge;
             bool isValidInput;
-
             do
             {
                 gameText.YellowText("What is your age?");
                 string input = Console.ReadLine();
-
                 isValidInput = int.TryParse(input, out playerAge);
 
                 if (!isValidInput)
                 {
                     gameText.RedText("Invalid selection!");
                 }
-
-
             } while (!isValidInput);
             
-            
             bool isOld = false; 
-
             if (playerAge >= 50)
             {
                 isOld = true;
@@ -48,7 +37,6 @@ namespace DeadOrbit
             //Selecting player gender and verification
             string genderInput;
             bool isMale = false;
-
            do
             {
                 gameText.YellowText("Are you male or female? Please enter 'M' or 'F'");
@@ -148,13 +136,26 @@ namespace DeadOrbit
 
             } while (totalPoints > 5 || !isInputValid);
 
-
-
             // Instantiate the Player 
-            Character Player = new Character(playerName, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
+            Character Player = new Character(playerName,20, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
                 isLifter, STR, AGL, PER, INTEL, CHAR);
+
+            //Checking if Player Info is Correct 
             Player.CharacterInfo();
-            Player.CheckInventory();
+            Console.WriteLine("Does this information look correct? \n[1] Yes \n[2] No");
+            int PlayerInput = Player.ProcessPlayerInput(Console.ReadLine());
+            if (PlayerInput == 1)
+            {
+                Console.WriteLine("The game will now proceed.");
+            } else if (PlayerInput == 2)
+            {
+                Console.WriteLine("Too bad! Should've double checked what you put in.");
+            } else
+            {
+                Console.WriteLine("Invalid Selection! Pay attention to directions better next time!");
+            }
+
+            Player.ProcessPlayerInput(Console.ReadLine());
 
             Console.ReadLine();
         }
