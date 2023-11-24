@@ -155,6 +155,7 @@ namespace DeadOrbit
                 Console.WriteLine("Invalid Selection! Pay attention to directions better next time!");
             }
 
+
             Player.ProcessPlayerInput(Console.ReadLine());
 
             Console.ReadLine();
