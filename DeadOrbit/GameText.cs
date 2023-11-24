@@ -64,7 +64,40 @@ public class GameText
 			"that you wish to know. This can be done with the following commands at any time: \n /inventory\n /health\n /info");
 	}
 
+	//Start of Story 
+	public void Docking()
+	{
+		Console.WriteLine("\nYou bring your ship down in the designated landing site. The ship's engine's begin to " +
+			"cool down with a low hissing hum. You gather your things and make your way down to the ship's cargo " +
+			"hold and walk down the landing ramp. You are immediately assailed by the sharp winds of Europa. You " +
+			"see through the snow the head of security for the first time in person.\n\n " +
+			"You see Sincere is dressed in all black ballistic plating, with a side arm strapped to his hip " +
+			"and a datapad in hand. Despite his heavily armored appearance he greets you warmly.");
+		GreenText("Sincere Arrington: ");
+		Console.WriteLine("Welcome to Europa!You arrived just in time. A storm's blowing in from the northern hemisphere" +
+			". If you'd attempted to land fifteen minutes later we wouldn't be having this conversation. I know it's cold " +
+			"out here but I need to perform a routine inspection before I can let you enter the facility.");
+		Console.WriteLine("\n\nAfter a long journey to Europa you're feeling quite exhausted, and with below freezing " +
+			"winds rising by the second you do not feel particularly inclined to stick around for a length cargo inspection." +
+			" What do you do?");
+		Console.WriteLine("\n [1] Wait through the routine inspection. \n [2] Charisma: Persuade Sincere to let you " +
+			"pass early.");
+	}
 
+	public void DockingOption1()
+	{
+		Console.WriteLine("You allow Sincere to perform the routine inspection of the cargo hold. He finds nothing " +
+			"of interest among the various food and medical supplies you've brought to Europa. However, while opening " +
+			"crates for the security guard to inspect you accidently smash your finger in between two crates.");
+		RedText("-1 Health");
+	}
+
+	public void DockingOption2()
+	{
+        GreenText("Sincere Arrington: ");
+        Console.WriteLine("Well, I suppose it is getting pretty cold out here. Fine, feel free to " +
+            "enter the facility whilst I check the cargo.");
+    }
 
 	//Constructor
 	public GameText()

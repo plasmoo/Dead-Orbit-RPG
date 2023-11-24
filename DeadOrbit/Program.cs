@@ -158,7 +158,38 @@ namespace DeadOrbit
             gameText.CommandsInfo();
 
             //Beginning of Act One 
+            gameText.GreenText("Sincere Arrington: ");
+            Console.WriteLine($"Your credentials have been verified, {Player.Name}. You are cleared to dock at " +
+                $"landing pad 1F.");
+            gameText.Docking();
             int ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+            int CharCheck;
+            if (ActOneInput == 1)
+            {
+                gameText.DockingOption1();
+                Player.Health = 19; 
+            } else if (ActOneInput == 2)
+            {
+                CharCheck = Player.DiceRoller("Charisma", 5);
+
+                if (CharCheck >= 5)
+                {
+                    gameText.DockingOption2();
+                } else
+                {
+                    gameText.GreenText("Sincere Arrington: ");
+                    Console.WriteLine($"Sorry, {Player.Name}. We have to do things by the book.");
+                    gameText.DockingOption1();
+                    Player.Health = 19;
+                }
+            } else
+            {
+                Console.WriteLine("You broke the game. Please select the correct options next time.");
+            }
+
+            Console.ReadLine();
+
+
 
 
 
