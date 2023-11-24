@@ -140,29 +140,41 @@
     public int ProcessPlayerInput(string input)
     {
         int number;
-        if (int.TryParse(input, out number) && number < 4)
-        {
-            return number;
-        }
+        bool validNumberEntered = false;
 
-        // Handling other commands
-        switch (input.ToLower())
+        do
         {
-            case "/inventory":
-                this.CheckInventory();
-                break;
-            case "/health":
-                this.CheckHealth();
-                break;
-            case "/info":
-                this.CharacterInfo();
-                break;
-            default:
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid selection!");
-                Console.ResetColor();
-                break;
-        }
+            if (int.TryParse(input, out number) && number < 4)
+            {
+                validNumberEntered = true;
+                return number;
+            }
+            else
+            {
+                // Handling other commands
+                switch (input.ToLower())
+                {
+                    case "/inventory":
+                        this.CheckInventory();
+                        break;
+                    case "/health":
+                        this.CheckHealth();
+                        break;
+                    case "/info":
+                        this.CharacterInfo();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid selection!");
+                        Console.ResetColor();
+                        break;
+                }
+
+                // Read next input
+                Console.WriteLine("Please enter a command or a numeric value:");
+                input = Console.ReadLine();
+            }
+        } while (!validNumberEntered);
 
         // Return a default value for non-numeric and unhandled inputs
         return -1;

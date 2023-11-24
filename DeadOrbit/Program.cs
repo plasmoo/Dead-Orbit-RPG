@@ -143,11 +143,11 @@ namespace DeadOrbit
             //Checking if Player Info is Correct 
             Player.CharacterInfo();
             Console.WriteLine("Does this information look correct? \n[1] Yes \n[2] No");
-            int PlayerInput = Player.ProcessPlayerInput(Console.ReadLine());
-            if (PlayerInput == 1)
+            int IntroInput = Player.ProcessPlayerInput(Console.ReadLine());
+            if (IntroInput == 1)
             {
                 Console.WriteLine("The game will now proceed.");
-            } else if (PlayerInput == 2)
+            } else if (IntroInput == 2)
             {
                 Console.WriteLine("Too bad! Should've double checked what you put in.");
             } else
@@ -155,10 +155,15 @@ namespace DeadOrbit
                 Console.WriteLine("Invalid Selection! Pay attention to directions better next time!");
             }
 
+            gameText.CommandsInfo();
 
-            Player.ProcessPlayerInput(Console.ReadLine());
+            //Beginning of Act One 
+            int ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
 
-            Console.ReadLine();
+
+
+           
+
         }
     }
 }

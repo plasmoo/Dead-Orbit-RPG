@@ -61,7 +61,7 @@ public class GameText
 	public void CommandsInfo()
 	{
 		YellowText("Throughout the course of the game you might want to check your inventory, or other information " +
-			"that you wish to know. This can be done with the following commands: \n /inventory\n /health\n /info");
+			"that you wish to know. This can be done with the following commands at any time: \n /inventory\n /health\n /info");
 	}
 
 
