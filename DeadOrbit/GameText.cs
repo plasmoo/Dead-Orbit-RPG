@@ -162,6 +162,62 @@ public class GameText
                             "Overseer's Office. You make your way there promptly.");
     }
 
+	public void OverseerOffice()
+	{
+		Console.WriteLine("\nYou arrive at the Overseer's Office, indistinguishable from all the other rooms on the " +
+			"administrative floor with the exception of the nameplate which read: Shaye Ellerbe. You press on the comm's button and wait to " +
+			"bet let in. After a momentary pause you hear the slide of the hydraulic doors and you walk inside. The " +
+			"interior office was the definition of utilitarian, composed of nothing else aside from the desk the Overseer " +
+			"sat at, a computer, and two chairs. The lighting was bright white, giving the room a sterile feeling.\n" +
+			"Behind the desk the Overseer hardly acknowledged your entrance, entranced in her work. Her glasses " +
+			"were opaque white circles from the reflection of her computer screen. After a pause she glances in your " +
+			"direction and directs you to sit. She wraps up with whatever it was she was doing and looks to you.");
+		GreenText("Overseer Ellerbe: ");
+		Console.WriteLine("I apologize, I am very busy these days I hardly get a moment to break away from my work. " +
+			"Thank you for your effort in bringing these supplies here to Europa, we've been in desperate need for " +
+			"supplies for much time now. It's getting harder and harder to find pilots to deliver this far out in " +
+			"the Outer-Rim.");
+		Console.WriteLine("\n\n[1] Why is it getting harder to hire pilots? \n[2] This facility is a maze by the way ");
+	}
+
+	public void OverseerOffice2()
+	{
+		GreenText("Overseer Ellerbe: ");
+		Console.WriteLine("Anyways, I'd hate to waste your time with small talk. Let's get onto the matter at hand.");
+		Console.WriteLine("\n\n[1] Charisma: Speaking to someone as beautiful as you is never a waste of time \n " +
+			"[2] Right. Let's talk payment.");
+	}
+
+	public void OverseerFlirt()
+	{
+        Console.WriteLine("You notice the Overseer blush behind her desk.");
+        GreenText("Overseer Ellerbe: ");
+        Console.WriteLine("I wish we got more pilot's around here like you. I've got your number, " +
+            "you'll be the first person I call if we need more supplies. Or just to see if you'd like " +
+            "to visit.");
+    }
+	public void OverseerReject1()
+	{
+        Console.WriteLine("You notice the Overseer shift in her seat uncomfortably.");
+        GreenText("Overseer Ellerbe: ");
+        Console.WriteLine("Let's keep things professional, shall we?");
+    }
+
+	public void OverseerReject2()
+	{
+        GreenText("Overseer Ellerbe: ");
+        Console.WriteLine("Settle down, old timer. You're a bit old for my taste. Maybe if " +
+            "you were twenty years younger.");
+    }
+
+	public void OverseerCompensation()
+	{
+		GreenText("Overseer Ellerbe: ");
+		Console.WriteLine("Accounting for all the cargo you've brought in and our head of security has verified that " +
+			"the cargo is in good condition, it looks like your total payment is $25,000 credits.\n\n The Overseer " +
+			"reaches into a drawer and retrieves a standard credit safe. It's a cylindrical device capable of " +
+			"holding up to a hundred thousand credits inside safely. She hands the safe over to you with a smile.");
+	}
 
 
 	//Constructor

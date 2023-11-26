@@ -170,7 +170,7 @@ namespace DeadOrbit
 
             gameText.CommandsInfo();
 
-            //Beginning of Act One 
+            //ACT ONE: Landing on Europa 
             gameText.GreenText("Sincere Arrington: ");
             Console.WriteLine($"Your credentials have been verified, {Player.Name}. You are cleared to dock at " +
                 $"landing pad 1F.");
@@ -199,7 +199,7 @@ namespace DeadOrbit
             {
                 Console.WriteLine("You broke the game. Please select the correct options next time.");
             }
-
+            // ACT ONE: Entering the Facility 
             gameText.EnteringTheFacility();
             ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
             int IntCheck;
@@ -233,11 +233,61 @@ namespace DeadOrbit
                 gameText.RedText("Congrats! You broke the game! Please learn how to follow basic directions.");
             }
 
+            //ACT ONE: Entering the Overseer's Office
+            gameText.OverseerOffice();
+            ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+
+            if (ActOneInput == 1)
+            {
+                gameText.GreenText("\nOverseer Ellerbe: ");
+                Console.WriteLine("Well as you are well aware Europa is a very remote location, a dangerous journey " +
+                    "to arrive here. Not to mention Europa's storms can halt all traffic in and out for weeks at a " +
+                    "time, plus more lucrative offers to easier locations...It's taken it's toll on the colony.");
+            } else if (ActOneInput == 2)
+            {
+                Console.WriteLine("\nOverseer Ellerbe laughs.");
+                gameText.GreenText("\nOverseer Ellerbe: ");
+                Console.WriteLine("Yes, certainly is. Even I still get lost here from time to time. What was going " +
+                    "through the architects mind when they designed this place is beyond me.");
+            } else
+            {
+                Console.WriteLine("Did you see an option 3? No, right? Then why did you select option 3? You can't " +
+                    " follow instructions then maybe you don't deserve to play the game.");
+            }
+            gameText.OverseerOffice2();
+            ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+            if (ActOneInput == 1)
+            {
+                CharCheck = Player.DiceRoller("Charisma", 10);
+                if (CharCheck >= 10 && isOld == false)
+                {
+                    gameText.OverseerFlirt();
+                } else if (CharCheck <= 11 && isOld == false)
+                {
+                    gameText.OverseerReject1();
+                } else if (CharCheck <= 11 && isOld == true)
+                {
+                    gameText.OverseerReject2();
+                } else
+                {
+                    Console.WriteLine("whoops, error.");
+                }
+            } else if (ActOneInput == 2)
+            {
+                gameText.GreenText("Overseer Ellerbe: ");
+                Console.WriteLine("Let me pull up your cargo log and we can tally up compensation.");
+            }
+
+            gameText.OverseerCompensation(); 
+
+
+
+
+
+
+
+
             Console.WriteLine("You reached the end of your written code, Andy.");
-
-
-
-
             Console.ReadLine();
 
 
