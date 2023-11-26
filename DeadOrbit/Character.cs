@@ -52,6 +52,11 @@
 
         int DiceRoll = random.Next(1, 21);
         int RollPlusModifier = DiceRoll + AbilityScore; 
+        if (this.IsVeteran == true)
+        {
+            RollPlusModifier += 2; 
+        }
+
         Console.WriteLine($"You rolled a {RollPlusModifier}!");
 
 

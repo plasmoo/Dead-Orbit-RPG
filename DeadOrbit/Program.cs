@@ -140,6 +140,19 @@ namespace DeadOrbit
             Character Player = new Character(playerName,20, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
                 isLifter, STR, AGL, PER, INTEL, CHAR);
 
+            //Adding ability points from Background 
+            
+            if (isSalesman == true)
+            {
+                Player.Charisma += 2; 
+            }
+
+            if (isLifter == true)
+            {
+                Player.Strength += 2;
+            }
+
+
             //Checking if Player Info is Correct 
             Player.CharacterInfo();
             Console.WriteLine("Does this information look correct? \n[1] Yes \n[2] No");
@@ -186,6 +199,9 @@ namespace DeadOrbit
             {
                 Console.WriteLine("You broke the game. Please select the correct options next time.");
             }
+
+
+
 
             Console.ReadLine();
 

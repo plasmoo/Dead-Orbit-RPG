@@ -78,7 +78,7 @@ public class GameText
 			". If you'd attempted to land fifteen minutes later we wouldn't be having this conversation. I know it's cold " +
 			"out here but I need to perform a routine inspection before I can let you enter the facility.");
 		Console.WriteLine("\n\nAfter a long journey to Europa you're feeling quite exhausted, and with below freezing " +
-			"winds rising by the second you do not feel particularly inclined to stick around for a length cargo inspection." +
+			"winds rising by the second you do not feel particularly inclined to stick around for a lengthy cargo inspection." +
 			" What do you do?");
 		Console.WriteLine("\n [1] Wait through the routine inspection. \n [2] Charisma: Persuade Sincere to let you " +
 			"pass early.");
@@ -98,6 +98,11 @@ public class GameText
         Console.WriteLine("Well, I suppose it is getting pretty cold out here. Fine, feel free to " +
             "enter the facility whilst I check the cargo.");
     }
+
+	public void EnteringTheFacility()
+	{
+
+	}
 
 	//Constructor
 	public GameText()
