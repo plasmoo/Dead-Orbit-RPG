@@ -96,13 +96,73 @@ public class GameText
 	{
         GreenText("Sincere Arrington: ");
         Console.WriteLine("Well, I suppose it is getting pretty cold out here. Fine, feel free to " +
-            "enter the facility whilst I check the cargo.");
+            "enter the facility whilst I check the cargo. Report to the Overseer's Office for compensation.");
     }
 
 	public void EnteringTheFacility()
 	{
-
+		Console.WriteLine("\nThe large hydraulic doors behind you close with a thud, sealing out the ongoing storm. " +
+			"Despite this there's still a noticeable chill in the air, even with heaters running 24/7 and layers " +
+			"of thermal shielding the facility is never warm on Europa. You spot a few colonists in the spaceport " +
+			"who direct you towards the Overseer's Office. You recall their instructions: Keep going straight " +
+			"through the spaceport till you reach landing entrance 1A, then make a left were you'll find the central " +
+			"elevator which will take you over towards the Administration Center located on sub-floor 12. From here " +
+			"you just go down towards the end of the hallway, make a left, a right, and then another left. " +
+			"You can't miss it. ");
+		Console.WriteLine("\nA left at landing entrance 1A... Or was it a right? You turn back to ask the colonist you " +
+			"just spoke with another question however they've already left. A quick glance around shows no one " +
+			"else available to direct you.");
+		Console.WriteLine("\n\nWas it a left or a right? [Intelligence]");
+		Console.WriteLine("[1] Clearly it was a left turn.\n[2]No, no, I'm pretty sure it was a right turn.");
 	}
+
+	public void ETFOption1()
+	{
+		Console.WriteLine("You ponder on the directions some more and then you remember the correct " +
+                        "directions. You feel silly for even doubting yourself. As you navigate through " +
+                        "the facility you notice the scale of the colony far exceeds that of the lowly " +
+                        "populated colony. You wonder what it is that they do here on Europa for a moment.\n" +
+                        "You arrive at the Overseer's Office."); 
+	}
+
+	public void ETFOption2()
+	{
+        Console.WriteLine("You ponder on the directions some more and then you self assuredly continue " +
+                        "on your way. You make a turn, and then another turn, and then . . . you realize you " +
+                        "should have gone left on your last turn so you double back but then you find yourself " +
+                        "at a janitorial closet . . . Hold on, now you really know where you are because there's a " +
+                        "sign . . . which is a little faded . . . But you can make out the directions . . . you " +
+                        "think. ");
+        Console.WriteLine("After some maze running you manage to find the central elevator and proceed to" +
+            " . . . which subfloor was it again? Was it two or was it twelve? You decide the simplest " +
+            "way to find out is to go to both. You hit sub floor 2 and navigate to what you believe " +
+            "to be the Overseer's Office. With the uptmost confidence you open the door to find " +
+            "two lovers entertwined.");
+        RedText("Lover One:\nWha???");
+        RedText("Lover Two: \nWhat are you doing here?!");
+
+        Console.WriteLine("\n Ask for directions?\n[1]Sure, they seem like they might be able to point me " +
+			"in the right direction.I'll only be a moment. \n[2] This does not feel like an appropriate time to ask...");
+
+    }
+
+	public void ETFNestedOpt1()
+	{
+        Console.WriteLine("You kindly ask the pair if they could point you in the right dir-");
+        RedText("Lover's In Unison: \nGET OUT!");
+        Console.WriteLine("You quickly close the" +
+            "door and suddenly (irritatingly so) you perfectly recall the directions to the " +
+            "Overseer's Office. You make your way there promptly.");
+    }
+
+	public void ETFNestedOpt2()
+	{
+        Console.WriteLine("You decided it would be wise to leave immediately. You quickly close the" +
+                            "door and suddenly (irritatingly so) you perfectly recall the directions to the " +
+                            "Overseer's Office. You make your way there promptly.");
+    }
+
+
 
 	//Constructor
 	public GameText()

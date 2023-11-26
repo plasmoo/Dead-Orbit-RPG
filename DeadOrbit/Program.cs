@@ -200,6 +200,41 @@ namespace DeadOrbit
                 Console.WriteLine("You broke the game. Please select the correct options next time.");
             }
 
+            gameText.EnteringTheFacility();
+            ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+            int IntCheck;
+
+            if (ActOneInput == 1 || ActOneInput == 2)
+            {
+                IntCheck = Player.DiceRoller("Intelligence", 7);
+
+                if (IntCheck >= 15)
+                {
+                    gameText.ETFOption1();
+                } else
+                {
+                    gameText.ETFOption2();
+                    int NestedInput = Player.ProcessPlayerInput(Console.ReadLine());    
+                    if (NestedInput == 1)
+                    {
+                        gameText.ETFNestedOpt1();
+
+                    } else if (NestedInput == 2)
+                    {
+                        gameText.ETFNestedOpt2();
+                    } else
+                    {
+                        Console.WriteLine("Listen there were two correction options to choose from, why would you" +
+                            "select something else? Can you read?? Game is broken now.");
+                    }
+                }
+            } else
+            {
+                gameText.RedText("Congrats! You broke the game! Please learn how to follow basic directions.");
+            }
+
+            Console.WriteLine("You reached the end of your written code, Andy.");
+
 
 
 
