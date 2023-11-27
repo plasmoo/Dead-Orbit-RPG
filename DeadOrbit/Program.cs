@@ -318,42 +318,9 @@ namespace DeadOrbit
                     "his neck as copious amounts of blood leak from his artery. You see him struggle for a moment " +
                     "before going still. You realize he is beyond your help now. \nYou now have to contend with " +
                     "his attacker whose shock just wore off and his rage is now focused on you.");
-                do
-                {
-                    int PAttack = Player.ATKRoll();
-                    int NPCAttack = ElevatorNPC.ATKRollNPC();
 
-                    if (PAttack > NPCAttack)
-                    {
-                        gameText.GreenText($"You gain the upperhand! You attack successfully for {PAttack} damage!");
-                        gameText.GreenText($"They have {ElevatorNPC.Health} health remaining!");
-                        ElevatorNPC.Health -= PAttack; 
-                    } else
-                    {
-                        gameText.RedText($"You lost the upperhand! You are attacked by the enraged colonist for {NPCAttack} damage!");
-                        gameText.RedText($"You have {Player.Health} health remaining!");
-                        Player.Health -= NPCAttack; 
-                    }
-
-                     
-                } while (Player.Health >= 0 );
-
-                if (Player.Health == 0)
-                {
-                    gameText.RedText("You DIED!");
-                     
-                } else if(ElevatorNPC.Health == 0) {
-                    gameText.GreenText($"You successfully defeated the enraged colonist. You have {Player.Health} health " +
-                        $"remainin!");
-                }
+                Player.Combat(Player.Health, ElevatorNPC.Health);
             }
-
-
-
-
-
-
-
 
 
 

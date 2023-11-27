@@ -52,10 +52,7 @@
 
         int DiceRoll = random.Next(1, 21);
         int RollPlusModifier = DiceRoll + AbilityScore; 
-        if (this.IsVeteran == true)
-        {
-            RollPlusModifier += 2; 
-        }
+        
 
         Console.WriteLine($"You rolled a {RollPlusModifier}!");
 
@@ -88,6 +85,58 @@
         int AttackRollNPC = random.Next(1, 5);
         return AttackRollNPC;
     }
+
+    public int  Combat(int PlayerHealth, int NPCHealth)
+    {
+        do
+        {
+            //Roll to see who manages to attack successfully
+            int PlayerRoll = random.Next(1, 21);
+            int NPCRoll = random.Next(1, 15);
+
+            if (PlayerRoll >= NPCRoll)
+            {
+                int DMG = ATKRoll();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"You gain the upperhand! You attack the enemy for {DMG} damage!");
+                Console.ResetColor();
+                NPCHealth -= DMG;
+                 
+            } else if (PlayerRoll < NPCRoll)
+            {
+                int DMG = ATKRollNPC();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"You lost the upperhand! The enemy attacks you for {DMG} damage!");
+                Console.ResetColor();
+                PlayerHealth -= DMG; 
+
+            }
+
+            if (PlayerHealth <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You died!");
+                Console.ResetColor();
+                return 0; 
+            }
+            else if (NPCHealth <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("You defeated the enemy!");
+                Console.ResetColor();
+                return 0; 
+            }
+
+
+        } while (PlayerHealth > 0 && NPCHealth > 0);
+
+        return 0;
+
+    }
+
+
+
+
 
 
 
