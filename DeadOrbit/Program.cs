@@ -319,8 +319,14 @@ namespace DeadOrbit
                     "before going still. You realize he is beyond your help now. \nYou now have to contend with " +
                     "his attacker whose shock just wore off and his rage is now focused on you.");
 
-                Player.Combat(Player.Health, ElevatorNPC.Health);
+                int CombatResult = Player.Combat(Player.Health, ElevatorNPC.Health);
+                if (CombatResult == 0)
+                {
+                    Player.Health = CombatResult; 
+                }
             }
+
+            gameText.Alarms();
 
 
 

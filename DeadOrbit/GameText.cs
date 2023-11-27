@@ -259,6 +259,23 @@ public class GameText
 			"still defending themselves on the ground. You also have a choice: \n\n[1] Escape \n[2] Help the colonist");
 	}
 
+	public void Alarms()
+	{
+		Console.WriteLine("As you leave the chaos of the elevator and rush back out to the spaceport in search of a guard " +
+			"you see that all the lights in the facility have turned red. Alarms start blaring out from every speaker " +
+			"in the facility. Over the intercom you hear an eerily calm voice say: 'Attention all Europa Personel, please " +
+			"report to your nearest emergency shelter. Repeat. All Europa Personel, please report to your nearest " +
+			"emergency shelter.'\n\nYou see swarms of colonists rushing all about the area, you rush towards one to ask " +
+			"for aid, however you notice more of the same strange behavior from the elevator. Many of the colonists twitched " +
+			"and convulsed, seemingly uncontrollably. You begin to see several colonists be attacked and mauled in the same " +
+			"fashion you saw only moments earlier.\n\nYou look to see the way towards your ship, however a swarm of " +
+			"hostile colonists appear to be rushing in from that direction. You turn back and see the central elevator " +
+			"is also swarmed. Where do you go?!\n\nIn the distance you hear a voice call out to you.");
+		GreenText("\nStranger: ");
+		Console.WriteLine("Hey! You! Follow me!");
+		Console.WriteLine("\n\nWhat do you do? \n[1] Trust the stranger \n[2]Go your own way");
+	}
+
 	//Constructor
 	public GameText()
 	{

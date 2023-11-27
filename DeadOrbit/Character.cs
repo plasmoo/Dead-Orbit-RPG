@@ -92,7 +92,7 @@
         {
             //Roll to see who manages to attack successfully
             int PlayerRoll = random.Next(1, 21);
-            int NPCRoll = random.Next(1, 15);
+            int NPCRoll = random.Next(1, 21);
 
             if (PlayerRoll >= NPCRoll)
             {
@@ -124,7 +124,7 @@
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("You defeated the enemy!");
                 Console.ResetColor();
-                return 0; 
+                return -1; 
             }
 
 
