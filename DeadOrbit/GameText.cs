@@ -217,8 +217,47 @@ public class GameText
 			"the cargo is in good condition, it looks like your total payment is $25,000 credits.\n\n The Overseer " +
 			"reaches into a drawer and retrieves a standard credit safe. It's a cylindrical device capable of " +
 			"holding up to a hundred thousand credits inside safely. She hands the safe over to you with a smile.");
+		Console.WriteLine("\nShe thanks you again for your service and you are permitted clearance to depart from " +
+			"the colony. She informs you the storm outside should clear within an hours time and you go on about your " +
+			"business. You leave the way you came heading towards the central elevator. You enter the elevator " +
+			"along with two other colonists. As you begin ascending up the various subfloors back to the surface of the " +
+			"planet you notice something's amiss about one of your companions aboard the elevator.");
+		Console.WriteLine("\n[1]Perception: Observe the other colonist  \n[2] Mind your business");
+	}
+	public void ElevatorOpt1()
+	{
+		Console.WriteLine("You look over to the colonist on your left and see they're slumped against the wall, " +
+			"mumbling something strange underneath their breath. You see the only other person in the elevator with you " +
+			"pay no mind to this behavior. As you observe closer you begin to notice the strange colonist begin to " +
+			"twitch, their leg shaking and their mumblings become increasingly louder. You begin to back away from " +
+			"this stranger. You see you only have a few more floors to go before you arrive at the top floor. Your " +
+			"heartbeat quickens, you don't know what is wrong with them but you know in your gut that it means trouble " +
+			"for you. You prepare to leave the elevator as soon as the door opens.");
+		Console.WriteLine("The counter above the door shows you have five floors left. Four. Three. \n\nSuddenly the " +
+			"strange colonist lashes out! They launch themselves onto the other colonist on the elevator and begin to tear " +
+			"into them with violent ferocity!");
 	}
 
+	public void ElevatorOpt2()
+	{
+		Console.WriteLine("You hear strange mumblings from one of the other colonist's in the elevator with you. " +
+			"You look at them and see they are turned away from you, slumped against the wall. A glance at the other " +
+			"passenger and you see they pay no mind to the strange colonist. You take two discreet steps away and " +
+			"mind your own business. These Outer-Rim colonists were often strange types, it took a certain kind " +
+			"of individual to live so far from the rest of the civilized worlds.");
+		Console.WriteLine("You begin to think about what you are going to have for dinner. It's been a while since " +
+			"you last ate. You remember what food you have stored in your fridge. There is that left over pizza, and you " +
+			"also have a frozen chicken in the freezer. It might be worth dropping by the colony's cafeteria for something " +
+			"ready to go. But colony food was usually poor fare ... Decisions decisions.");
+		Console.WriteLine("\n\nYou turn your head and see that the once slumped over colonist was now in a deep frenzy, mauling " +
+			"the other passenger!");
+	}
+
+	public void ElevatorOpens()
+	{
+		Console.WriteLine("\n\nThe elevator opens! You have an opportunity for escape! You look over and see the colonist " +
+			"still defending themselves on the ground. You also have a choice: \n\n[1] Escape \n[2] Help the colonist");
+	}
 
 	//Constructor
 	public GameText()

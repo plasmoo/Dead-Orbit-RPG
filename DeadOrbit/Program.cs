@@ -278,7 +278,79 @@ namespace DeadOrbit
                 Console.WriteLine("Let me pull up your cargo log and we can tally up compensation.");
             }
 
-            gameText.OverseerCompensation(); 
+            gameText.OverseerCompensation();
+            ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+            int PerCheck; 
+
+            if (ActOneInput == 1)
+            {
+                PerCheck = Player.DiceRoller("Perception",7);
+                if (PerCheck >= 7 )
+                {
+                    gameText.ElevatorOpt1();
+                } else
+                {
+                    gameText.ElevatorOpt2();
+                }
+
+
+            } else
+            {
+                gameText.ElevatorOpt2();
+            }
+
+            gameText.ElevatorOpens();
+            ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+            Character ElevatorNPC = new Character("ElevatorNPC", 7, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
+                isLifter, STR, AGL, PER, INTEL, CHAR);
+
+
+            if (ActOneInput == 1)
+            {
+                Console.WriteLine("\nYou feel a slight sense of sorrow for the victim on the ground, but you haven't " +
+                    "made it this far by worrying about others. You gotta look after number 1 (you). You speed out the " +
+                    "elevator and quickly slam the button to close the door behind you. You hear the doors close with a " +
+                    "thud and you hear the muffled shrieks of the poor soul you damned.");
+            } else
+            {
+                Console.WriteLine("\nYou rush over to help. You catch the enraged colonist off guard and with all your " +
+                    "strength you pull him off the man on the ground. You see the poor soul on the floor, clutching " +
+                    "his neck as copious amounts of blood leak from his artery. You see him struggle for a moment " +
+                    "before going still. You realize he is beyond your help now. \nYou now have to contend with " +
+                    "his attacker whose shock just wore off and his rage is now focused on you.");
+                do
+                {
+                    int PAttack = Player.ATKRoll();
+                    int NPCAttack = ElevatorNPC.ATKRollNPC();
+
+                    if (PAttack > NPCAttack)
+                    {
+                        gameText.GreenText($"You gain the upperhand! You attack successfully for {PAttack} damage!");
+                        gameText.GreenText($"They have {ElevatorNPC.Health} health remaining!");
+                        ElevatorNPC.Health -= PAttack; 
+                    } else
+                    {
+                        gameText.RedText($"You lost the upperhand! You are attacked by the enraged colonist for {NPCAttack} damage!");
+                        gameText.RedText($"You have {Player.Health} health remaining!");
+                        Player.Health -= NPCAttack; 
+                    }
+
+                     
+                } while (Player.Health >= 0 );
+
+                if (Player.Health == 0)
+                {
+                    gameText.RedText("You DIED!");
+                     
+                } else if(ElevatorNPC.Health == 0) {
+                    gameText.GreenText($"You successfully defeated the enraged colonist. You have {Player.Health} health " +
+                        $"remainin!");
+                }
+            }
+
+
+
+
 
 
 

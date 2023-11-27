@@ -75,6 +75,23 @@
         return RollPlusModifier;
     }
 
+    // Attack Roll Method 
+
+    public int ATKRoll()
+    {
+        int AttackRoll = random.Next(1, 10);
+        return AttackRoll;
+    }
+
+    public int ATKRollNPC()
+    {
+        int AttackRollNPC = random.Next(1, 5);
+        return AttackRollNPC;
+    }
+
+
+
+
     // Character Information 
 
     public void CharacterInfo()
