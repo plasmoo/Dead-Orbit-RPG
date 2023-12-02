@@ -4,12 +4,7 @@
     public string Name { get; set; }
     public int Health {  get; set; }
     public int Age { get; set; }
-    public bool IsOld { get; set; }
-    public bool IsMale { get; set; }
-    public string Background { get; set; }
-    public bool IsVeteran { get; set; } 
-    public bool IsSalesman { get; set; }    
-    public bool IsLifter { get; set; }
+
 
     //Character Stats
     public int Strength { get; set; }
@@ -72,109 +67,68 @@
         return RollPlusModifier;
     }
 
-    // Attack Roll Method 
+ 
 
-    public int ATKRoll()
+
+    //Constructor
+    public Character(string name,int health, int age, int strength, int agility, int perception,
+        int intelligence, int charisma)
     {
-        int AttackRoll = random.Next(1, 10);
-        return AttackRoll;
-    }
-
-    public int ATKRollNPC()
-    {
-        int AttackRollNPC = random.Next(1, 5);
-        return AttackRollNPC;
-    }
-
-    public int  Combat(int PlayerHealth, int NPCHealth)
-    {
-        do
-        {
-            //Roll to see who manages to attack successfully
-            int PlayerRoll = random.Next(1, 21);
-            int NPCRoll = random.Next(1, 21);
-
-            if (PlayerRoll >= NPCRoll)
-            {
-                int DMG = ATKRoll();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"You gain the upperhand! You attack the enemy for {DMG} damage!");
-                Console.ResetColor();
-                NPCHealth -= DMG;
-                 
-            } else if (PlayerRoll < NPCRoll)
-            {
-                int DMG = ATKRollNPC();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"You lost the upperhand! The enemy attacks you for {DMG} damage!");
-                Console.ResetColor();
-                PlayerHealth -= DMG; 
-
-            }
-
-            if (PlayerHealth <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died!");
-                Console.ResetColor();
-                return 0; 
-            }
-            else if (NPCHealth <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You defeated the enemy!");
-                Console.ResetColor();
-                return -1; 
-            }
-
-
-        } while (PlayerHealth > 0 && NPCHealth > 0);
-
-        return 0;
-
+        Name = name;
+        Health = health;
+        Age = age;
+        Strength = strength;
+        Agility = agility;
+        Perception = perception;
+        Intelligence = intelligence;
+        Charisma = charisma;
     }
 
 
 
 
+}
 
 
+public class PlayerCharacter : Character
+{
+    //Player Specific Stats 
+    public bool IsOld { get; set; }
+    public string Gender { get; set; }
+    public string Background { get; set; }
+    public bool IsVeteran { get; set; }
+    public bool IsSalesman { get; set; }
+    public bool IsLifter { get; set; }
 
 
     // Character Information 
 
     public void CharacterInfo()
     {
-        string Gender = "";
-        string Background;
-
-        if (this.IsMale = true )
-        {
-            Gender = "Male";
-        } else
-        {
-            Gender = "Female";
-        }
+       
 
         if (this.IsVeteran == true)
         {
             Background = "Veteran";
-        } else if (this.IsSalesman = true )
+        }
+        else if (this.IsSalesman = true)
         {
             Background = "Salesman";
-        } else if (this.IsLifter = true)
+        }
+        else if (this.IsLifter = true)
         {
             Background = "Weightlifter";
-        } else
+        }
+        else
         {
             Background = "";
         }
 
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine($"\nName: {this.Name}\nAge: {this.Age}\nGender: {Gender}\nBackground: {Background} " +
+        Console.WriteLine($"\nName: {this.Name}\nAge: {this.Age}\nGender: {this.Gender}\nBackground: {Background} " +
             $"\nStrength: {this.Strength}\nAgility: {this.Agility}\nPerception: {this.Perception}\nIntelligence: " +
             $"{this.Intelligence}\nCharisma: {this.Charisma} ");
-        Console.ResetColor(); 
+        Console.ResetColor();
     }
 
 
@@ -252,33 +206,23 @@
     }
 
 
-
-
-    //Constructor
-    public Character(string name,int health, int age, bool isOld, bool isMale, string background, bool isVeteran, bool
-        isSalesman, bool isLifter, int strength, int agility, int perception,
-        int intelligence, int charisma)
+    public PlayerCharacter(string name, int health, int age, int strength, int agility, int perception,
+        int intelligence, int charisma, bool isOld, string gender, string background, bool 
+        isVeteran, bool isSalesman, bool isLifter) : base(name, health, age, strength, agility, perception,
+            intelligence, charisma)
     {
-        Name = name;
-        Health = health;
-        Age = age;
-        IsOld = isOld;
-        IsMale = isMale;
-        Background = background;
-        IsVeteran = isVeteran;
+        IsOld = isOld; 
+        Gender = gender; 
+        Background = background; 
+        IsVeteran = isVeteran; 
         IsSalesman = isSalesman;
         IsLifter = isLifter;
-        Strength = strength;
-        Agility = agility;
-        Perception = perception;
-        Intelligence = intelligence;
-        Charisma = charisma;
 
-        //Inventory 
-        Inventory.Add("Pistol");
     }
 
 
 
 
+
 }
+

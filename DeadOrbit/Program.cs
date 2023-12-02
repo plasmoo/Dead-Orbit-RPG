@@ -42,16 +42,6 @@ namespace DeadOrbit
                 gameText.YellowText("Are you male or female? Please enter 'M' or 'F'");
                 genderInput = Console.ReadLine().ToUpper();
 
-                if (genderInput != "F" && genderInput != "M" )
-                {
-                    gameText.RedText("Invalid Selection!");
-                }
-
-            } while (genderInput != "F" && genderInput != "M");
-
-            if (genderInput == "M") {
-                isMale = true;
-            }
 
             //Selecting player background and verification
 
@@ -327,6 +317,17 @@ namespace DeadOrbit
             }
 
             gameText.Alarms();
+            ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
+
+            if (ActOneInput == 1)
+            {
+                Console.WriteLine("Filler Text");
+
+            } else
+            {
+                gameText.RedText("You died!");
+                return; 
+            }
 
 
 
