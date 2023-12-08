@@ -36,11 +36,25 @@ namespace DeadOrbit
 
             //Selecting player gender and verification
             string genderInput;
-            bool isMale = false;
-           do
+            do
             {
                 gameText.YellowText("Are you male or female? Please enter 'M' or 'F'");
                 genderInput = Console.ReadLine().ToUpper();
+
+                if (genderInput != "M" && genderInput != "F")
+                {
+                    gameText.RedText("Invalid Selection!");
+                }
+
+            } while (genderInput != "M" && genderInput != "F");
+
+            if (genderInput == "M")
+            {
+                genderInput = "Male";
+            } else
+            {
+                genderInput = "Female";
+            }
 
 
             //Selecting player background and verification
@@ -81,6 +95,20 @@ namespace DeadOrbit
 
             } while (backgroundInput != "V" && backgroundInput != "S" && backgroundInput != "W");
 
+            if (isVeteran == true)
+            {
+                backgroundInput = "Veteran";
+            } 
+
+            if (isSalesman == true)
+            {
+                backgroundInput = "Salesman";
+            }
+
+            if (isLifter == true)
+            {
+                backgroundInput = "Weightlifter";
+            }
 
             // Explaining Ability Checks and distributing points
             int STR, AGL, PER, INTEL, CHAR;
@@ -127,11 +155,16 @@ namespace DeadOrbit
             } while (totalPoints > 5 || !isInputValid);
 
             // Instantiate the Player 
-            Character Player = new Character(playerName,20, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
-                isLifter, STR, AGL, PER, INTEL, CHAR);
+            PlayerCharacter Player = new PlayerCharacter(playerName,20,playerAge, STR, AGL, PER, INTEL, CHAR, isOld, genderInput,backgroundInput, 
+                isVeteran, isSalesman, isLifter);
+
+    
+
+
+
 
             //Adding ability points from Background 
-            
+
             if (isSalesman == true)
             {
                 Player.Charisma += 2; 
@@ -291,8 +324,10 @@ namespace DeadOrbit
 
             gameText.ElevatorOpens();
             ActOneInput = Player.ProcessPlayerInput(Console.ReadLine());
-            Character ElevatorNPC = new Character("ElevatorNPC", 7, playerAge, isOld, isMale, backgroundInput, isVeteran, isSalesman,
-                isLifter, STR, AGL, PER, INTEL, CHAR);
+            Character ElevatorNPC = new Character("ElevatorNPC", 7, 25, STR, AGL, PER, INTEL, CHAR);
+
+
+        
 
 
             if (ActOneInput == 1)
@@ -309,11 +344,7 @@ namespace DeadOrbit
                     "before going still. You realize he is beyond your help now. \nYou now have to contend with " +
                     "his attacker whose shock just wore off and his rage is now focused on you.");
 
-                int CombatResult = Player.Combat(Player.Health, ElevatorNPC.Health);
-                if (CombatResult == 0)
-                {
-                    Player.Health = CombatResult; 
-                }
+                //Combat scene added here
             }
 
             gameText.Alarms();
