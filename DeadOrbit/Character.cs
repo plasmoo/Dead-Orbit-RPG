@@ -67,6 +67,109 @@
         return RollPlusModifier;
     }
 
+
+    public void Combat(int playerHealth,string enemyName, int enemyHealth, bool isInfected)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"You are now in combat with {enemyName}!");
+        Console.ResetColor();
+        do
+        {
+
+            if (isInfected == true)
+            {
+                int randomDialogue = random.Next(1, 5);
+                string dialogueOne = " screeches at you!";
+                string dialogueTwo = " writhes in agony!";
+                string dialogueThree = " stares at you with animialistic fury!";
+                string dialogueFour = " prepares to charge!";
+
+                switch (randomDialogue)
+                {
+                    case 1:
+                        Console.WriteLine($"{enemyName}{dialogueOne}");
+                        break;
+                    case 2:
+                        Console.WriteLine($"{enemyName}{dialogueTwo}");
+                        break;
+                    case 3:
+                        Console.WriteLine($"{enemyName}{dialogueThree}");
+                        break;
+                    case 4:
+                        Console.WriteLine($"{enemyName}{dialogueFour}");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input!");
+                        break;
+                }
+            }
+
+            Console.ResetColor();
+            
+            do
+            {
+                Console.WriteLine("\nWhat do you do?");
+                Console.WriteLine("\n[1] Fight \n[2] Escape");
+                int combatInput = int.Parse(Console.ReadLine());
+                if (combatInput == 1)
+                {
+                    int playerRoll = random.Next(1, 21);
+                    int enemyRoll = random.Next(1,19);
+
+                    if (playerRoll >= enemyRoll)
+                    {
+                        int attackRoll = random.Next(1, 21);
+                        Console.WriteLine($"You punch {enemyName} for {attackRoll} damage!");
+                        enemyHealth -= attackRoll;
+                    } else
+                    {
+                        int attackRoll = random.Next(1, 10);
+                        Console.WriteLine($"{enemyName}attacks you for {attackRoll} damage!");
+                        playerHealth -= attackRoll;
+                    }
+
+                    
+                }
+
+                if (combatInput == 2)
+                {
+                    Console.WriteLine("You analyze the scene and search for a method of escape!");
+                    int escapeRoll = random.Next(1,21);
+                    if (escapeRoll >= 15)
+                    {
+                        Console.WriteLine("You managed to escape successfully!");
+                        enemyHealth = 0; 
+                    } else
+                    {
+                        Console.WriteLine("You search for a method of escape, but there is no way out!");
+
+                    }
+                }
+
+            } while (enemyHealth < 1 && playerHealth < 1);
+
+            if (enemyHealth <= 0 )
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"You have defeated {enemyName}!");
+                Console.ResetColor();
+            }
+
+            if (playerHealth <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have been defeated!");
+                Console.ResetColor();
+            }
+
+
+
+        } while (enemyHealth > 0 && playerHealth > 0);
+
+
+
+    }
+
  
 
 

@@ -344,7 +344,7 @@ namespace DeadOrbit
                     "before going still. You realize he is beyond your help now. \nYou now have to contend with " +
                     "his attacker whose shock just wore off and his rage is now focused on you.");
 
-                //Combat scene added here
+                Player.Combat(Player.Health, "Enraged Colonist", 14, true);
             }
 
             gameText.Alarms();
